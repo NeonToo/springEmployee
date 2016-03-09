@@ -1,0 +1,20 @@
+<mvc:View
+	height="100%"
+	controllerName="ems.controller.DepartmentDetail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		id="detailPage"
+		showHeader="false" >
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="edit" text="Edit" type="Emphasized" press="handleEditPress" />
+					<Button id="delete" text="Delete" press="handleDeletePress" />
+					<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+					<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

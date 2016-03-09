@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<f:SimpleForm
+				id="SimpleDisplay"
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				title="Department"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1">
+				<f:content>
+					<Label text="ID" />
+					<Text text="{/id}" />
+					<Label text="Name" />
+					<Text text="{/name}" />
+					<Label text="Manager" />
+					<Text text="{/manager/name}" />
+					<Label text="Members" />
+					<List items="{/members}">
+						<items>
+							<DisplayListItem label="Name" value="{name}" type="Navigation" />
+						</items>
+					</List>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

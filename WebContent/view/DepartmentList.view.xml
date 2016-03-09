@@ -1,0 +1,55 @@
+<core:View
+	controllerName="ems.controller.DepartmentList"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Page title="Department List">
+		<content>
+			<Table
+				inset="false"
+				items="{/}">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							text="Departments"
+							level="H2" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="ID" />
+					</Column>
+					<Column width="12em">
+						<Text text="Name" />
+					</Column>
+					<Column width="12em">
+						<Text text="Manager" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+						press="onPress"
+						type="Navigation">
+						<cells>
+							<Text text="{id}" />
+							<Text text="{name}" />
+							<Text text="{manager/name}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Link
+						text="Add Department"
+						emphasized="true"
+						target="_blank"
+						href="addDepartment.html"></Link>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

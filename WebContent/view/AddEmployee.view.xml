@@ -1,0 +1,82 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified"
+	controllerName="ems.controller.AddEmployee"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Add Employee">
+		<content>
+			<l:Grid
+				defaultSpan="L12 M12 S12"
+				width="auto">
+				<l:content>
+					<f:SimpleForm
+						id="Detail"
+						minWidth="1024"
+						maxContainerCols="2"
+						editable="true"
+						layout="ResponsiveGridLayout"
+						title="Add Employee"
+						labelSpanL="3"
+						labelSpanM="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						columnsL="1"
+						columnsM="1"
+						class="editableForm">
+						<f:content>
+							<Label text="Name" />
+							<Input
+								value="{/name}"
+								name="name" />
+							<Label text="Age" />
+							<Input
+								value="{/age}"
+								name="age" />
+							<Label text="Email" />
+							<Input
+								value="{/email}"
+								name="email" />
+							<Label text="Department" />
+							<Select id="selectDepartment" items="{/}">
+								<items>
+									<core:Item text="{name}" />
+								</items>
+							</Select>
+							<Label text="Image" />
+							<u:FileUploader
+								id="fileUploader"
+								name="imgId"
+								uploadUrl="/springEmployee/ImageController?method=add"
+								width="400px"
+								tooltip="Upload your file to the local server"
+								uploadComplete="handleUploadComplete" />
+							<Label text="" />
+							<Button
+								text="Upload File"
+								press="handleUploadPress" />
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						id="save"
+						text="Save"
+						type="Emphasized"
+						press="handleSavePress" />
+					<Button
+						id="cancel"
+						text="Cancel"
+						press="handleCancelPress" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

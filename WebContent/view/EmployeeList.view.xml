@@ -1,0 +1,65 @@
+<core:View
+	controllerName="ems.controller.EmployeeList"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Page title="Employee List">
+		<content>
+			<Table
+				inset="false"
+				items="{/}">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							text="Employees"
+							level="H2" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="ID" />
+					</Column>
+					<Column width="12em">
+						<Text text="Name" />
+					</Column>
+					<Column width="12em">
+						<Text text="Department" />
+					</Column>
+					<Column width="12em">
+						<Text text="Position" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+						press="onPress"
+						type="Navigation">
+						<cells>
+							<Text text="{id}" />
+							<Text text="{name}" />
+							<Text text="{department}" />
+							<Text text="{position}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Link
+						text="Add Employee"
+						emphasized="true"
+						target="_blank"
+						href="addEmployee.html" />
+					<Link/><Link/><Link/>
+					<Link
+						text="Add Department"
+						emphasized="true"
+						target="_blank"
+						href="addDepartment.html" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,22 @@
+{
+	"PersonCollection": 
+	[
+		{
+			"id": 1,
+			"name": "Kay",
+			"age": 21,
+			"email": "469565714@qq.com",
+			"position": "manager",
+			"department": "Dev"
+		},
+
+		{
+			"id": 2,
+			"name": "John",
+			"age": 20,
+			"email": "549863926@qq.com",
+			"position": "officer",
+			"department": "Arch"
+		}
+	]
+}

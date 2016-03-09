@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core">
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<f:SimpleForm
+				id="Detail"
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				title="Employee"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1"
+				class="editableForm">
+				<f:content>
+					<Label text="ID" />
+					<Text text="{/id}" />
+					<Label text="Name" />
+					<Input
+						value="{/name}"
+						name="name" />
+					<Label text="Age" />
+					<Input
+						value="{/age}"
+						name="age" />
+					<Label text="Email" />
+					<Input
+						value="{/email}"
+						name="email" />
+					<Label text="Department" />
+					<Select
+						id="selectDepartment"
+						items="{/}">
+						<items>
+							<core:Item text="{name}" />
+						</items>
+					</Select>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>
